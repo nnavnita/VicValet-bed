@@ -19,8 +19,7 @@ describe('AppController', () => {
   describe('getBays', () => {
     it('should return 0 nhits', async () => {
       const filter = {
-        lat: 0,
-        long: 0,
+        address: '',
         dist: 0
       };
       expect(await appController.getBays({ body: filter })).toHaveProperty('nhits', 0);
