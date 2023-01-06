@@ -3,10 +3,16 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getBays(): Promise<any> {
+    // TODO: get these values from the user
+    const filter = {
+      lat: -37.813742,
+      long: 144.953649
+    };
+    const result = await this.appService.getBays(filter);
+    return result;
   }
 }
