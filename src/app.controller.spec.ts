@@ -17,12 +17,13 @@ describe('AppController', () => {
   });
 
   describe('getBays', () => {
-    // TODO: write a better test!
-    it('should return an array of bays', async () => {
-      const result = [{}, {}, {}];
-      jest.spyOn(appController, 'getBays').mockImplementation(async () => result);
-
-      expect(await appController.getBays()).toBe(result);
+    it('should return 0 nhits', async () => {
+      const filter = {
+        lat: 0,
+        long: 0,
+        dist: 0
+      };
+      expect(await appController.getBays({ body: filter })).toHaveProperty('nhits', 0);
     });
   });
 });
