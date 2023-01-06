@@ -1,5 +1,6 @@
 type FilterObj = {
     lat: Number,
     long: Number,
-    dist?: Number
+    dist?: Number,
+    hideOccupied?: Boolean
 }
