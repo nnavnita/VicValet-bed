@@ -21,6 +21,7 @@ export class AppService {
         }),
       ),
     );
+
     return data;
   }
   private async getLatLong(address: String): Promise<Coords> {
